@@ -1,7 +1,7 @@
 // Write your JavaScript code here!
 
 //need to call the formSubmission function
-    formSubmission();
+    //formSubmission();
 
 
 window.addEventListener("load", function() {
