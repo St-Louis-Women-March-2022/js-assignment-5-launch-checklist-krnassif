@@ -1,5 +1,9 @@
 // Write your JavaScript code here!
 
+//need to call the formSubmission function
+    formSubmission();
+
+
 window.addEventListener("load", function() {
 
    let listedPlanets;
