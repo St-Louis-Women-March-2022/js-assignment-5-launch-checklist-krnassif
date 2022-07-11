@@ -27,7 +27,18 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   
+   let form = document.getElementById("testForm");
+   form.addEventListener("submit", function(event) {
+    let pilotName = document.querySelector("input[name=pilotName]");
+    let copilotName = document.querySelector("input[name=copilotName]");
+    let fuelLevel = document.querySelector("input [name=fuelLevel]");
+    let cargoMass = document.querySelector("inut[name=cargoMass]");
+    if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === "" || cargoMass.value === "") {
+        alert("All fields are required!");
+        event.preventDefualt();
+    }
+
+   });
 }
 
 async function myFetch() {
