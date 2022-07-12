@@ -1,7 +1,7 @@
 // Write your JavaScript code here!
 
 //need to call the formSubmission function
-    formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
+    formSubmission(pilotName, copilotName, fuelLevel, cargoMass);
 
 
 window.addEventListener("load", function() {
