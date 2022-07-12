@@ -49,7 +49,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         pilotStatus.innerHTML = `Pilot ${pilotName.value} is ready`;
         copilotStatus.innerHTML = `Co-pilot ${copilotName.value} is ready`;
     } else {
-        alert("Pilo $ co-pilot need to be names, not integers");
+        alert("Pilot $ co-pilot need to be names, not integers");
         event.preventDefualt();
     } else {
         if (fuelLevel.value < 10000){ 
