@@ -43,15 +43,13 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === "" || cargoMass.value === "") {
         alert("All fields are required!");
         event.preventDefualt();
-    }
-
-    if (isNaN(pilotName.value) || isNaN(copilotName.value)) {
+    } else if (isNaN(pilotName.value) || isNaN(copilotName.value)) {
         pilotStatus.innerHTML = `Pilot ${pilotName.value} is ready`;
         copilotStatus.innerHTML = `Co-pilot ${copilotName.value} is ready`;
     } else {
-        alert("Pilot $ co-pilot need to be names, not integers");
+        alert("Pilot and co-pilot must be names. Do not include numbers or characters.");
         event.preventDefualt();
-    } else {
+        } 
         if (fuelLevel.value < 10000){ 
             faultyItems.style.visibility = 'visible';
             fuelStatus.innerHTML = `Fuel level is too low for the journey`;
@@ -77,13 +75,9 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             fuelStatus.innerHTML = `Fuel level is high enough for launch`;
             cargoStatus.innerHTML = `Cargo mass is low enough for launch`;
         }
-
     }
-
-    }
-
-   );
-}
+   )
+};
 
 async function myFetch() {
     let planetsReturned;
