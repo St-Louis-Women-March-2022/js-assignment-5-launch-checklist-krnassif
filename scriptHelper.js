@@ -52,7 +52,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         alert("Pilo $ co-pilot need to be names, not integers");
         event.preventDefualt();
     } else {
-        if(fuelLevel.value < 10000){
+        if (fuelLevel.value < 10000){ 
             faultyItems.style.visibility = 'visible';
             fuelStatus.innerHTML = `Fuel level is too low for the journey`;
             launchStatus.innerHTML = `Shuttle is not ready for launch`;
@@ -82,7 +82,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
     }
 
-   });
+   );
 }
 
 async function myFetch() {
