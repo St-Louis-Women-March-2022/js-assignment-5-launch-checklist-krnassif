@@ -37,7 +37,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
     let faultyItems = document.getElementById('faultyItems');
     let fuelStatus = document.getElementById('fuelStatus');
-    let launchStatus = document.getElementById('pilotStatus');
+    let launchStatus = document.getElementById('launchStatus');
+    let pilotStatus = document.getElementById('pilotStatus');
     let copilotStatus = document.getElementById('copilotStatus');
 
     if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === "" || cargoMass.value === "") {
