@@ -6,11 +6,11 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
    /*
                 <h2>Mission Destination</h2>
                 <ol>
-                    <li>Name: </li>
-                    <li>Diameter: </li>
+                    <li>Name: ${name}</li>
+                    <li>Diameter: ${diameter}</li>
                     <li>Star: ${star}</li>
-                    <li>Distance from Earth: </li>
-                    <li>Number of Moons: </li>
+                    <li>Distance from Earth: ${distance} </li>
+                    <li>Number of Moons: ${moons}</li>
                 </ol>
                 <img src="">
    */
@@ -30,15 +30,15 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   // let form = document.getElementById("testForm");
    //form.addEventListener("submit", function(event) {
 
-    // let pilotName = document.querySelector("input[name=pilotName]");
-    // let copilotName = document.querySelector("input[name=copilotName]");
+    // let pilot = document.querySelector("input[name=pilot]");
+    // let copilot = document.querySelector("input[name=copilot]");
     // let fuelLevel = document.querySelector("input [name=fuelLevel]");
-    // let cargoMass = document.querySelector("inut[name=cargoMass]");
+    // let cargoMass = document.querySelector("input[name=cargoMass]");
 
     //let faultyItems = document.getElementById('faultyItems');
    // let launchStatus = document.getElementById('launchStatus');
-    let pilotStatus = document.getElementById('pilotStatus');
-    let copilotStatus = document.getElementById('copilotStatus');
+    let pilot = document.getElementById('pilotStatus');
+    let copilot = document.getElementById('copilotStatus');
     let fuelStatus = document.getElementById('fuelStatus')
     let cargoStatus = document.getElementById('cargoStatus')
 
@@ -46,8 +46,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     //     alert("All fields are required!");
     //     event.preventDefualt();
     // } else if (isNaN(pilot.value) || isNaN(copilot.value)) {
-    //     pilotStatus.innerHTML = `Pilot ${pilot.value} is ready`;
-    //     copilotStatus.innerHTML = `Co-pilot ${copilot.value} is ready`;
+    //     pilot.innerHTML = `Pilot ${pilot.value} is ready`;
+    //     copilot.innerHTML = `Co-pilot ${copilot.value} is ready`;
     // } else {
     //     alert("Pilot and co-pilot must be names. Do not include numbers or characters.");
     //     event.preventDefualt();
@@ -80,15 +80,21 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     };
 
 async function myFetch() {
-    let planetsReturned;
-
+    // let planetsReturned = await fetch('https://handlers.education.launchcode.org/static/planets.json');
+    // let data = await planetsReturned.json()
+    // console.log(data)
+    // return data;
+}
     planetsReturned = await fetch().then( function(response) {
         });
 
     return planetsReturned;
-}
+
 
 function pickPlanet(planets) {
+    // let randomIndex = Math.floor(Math.random() * planets.length)
+    // let currentPlanet = planets[randomIndex];
+    // return currentPlanet;
 }
 
 module.exports.addDestinationInfo = addDestinationInfo;
