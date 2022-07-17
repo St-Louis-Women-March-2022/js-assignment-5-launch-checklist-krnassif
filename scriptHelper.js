@@ -28,19 +28,17 @@ function validateInput(testInput) {
 };
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-
-    if (pilot.value === "" || copilot.value === "" || fuelLevel.value === "" || cargoLevel.value === "") {
+alert("katie")
+    if (pilot === "" || copilot === "" || fuelLevel === "" || cargoLevel === "") {
         alert("All fields are required!");
-        preventDefualt();
-    } else if (isNaN(pilot.value) || isNaN(copilot.value)) {
-        pilot.innerHTML = `Pilot ${pilot.value} is ready`;
-        copilot.innerHTML = `Co-pilot ${copilot.value} is ready`;
+    } else if (isNaN(pilot) || isNaN(copilot)) {
+        pilot.innerHTML = `Pilot ${pilot} is ready`;
+        copilot.innerHTML = `Co-pilot ${copilot} is ready`;
     } else {
-        alert("Pilot and co-pilot must be names. Do not include numbers or characters.");
-        preventDefualt();
+        alert("Make sure to enter valid information for each field!");
     } 
 
-    if (fuelLevel.value < 10000){ 
+    if (fuelLevel < 10000){ 
         list.style.visibility = "visible";
         fuelStatus.innerHTML = "Fuel level is too low for the journey";
         launchStatus.innerHTML = "Shuttle is not ready for launch";
@@ -50,7 +48,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         fuelStatus.innerHTML = "Fuel level is high enough for launch";
     }
     
-    if(cargoLevel.value > 10000){
+    if(cargoLevel > 10000){
         list.style.visibility = "visible";
         fuelStatus.innerHTML = "Cargo mass is too heavy for the shuttle to take off";
         launchStatus.innterHTML = "Shuttle is not ready for launch";
@@ -60,7 +58,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         cargoStatus.innerHTML = "Cargo mass is low enough for launch";
     }
 
-    if(fuelLevel.value >= 10000 && cargoMass.value <= 10000){
+    if(fuelLevel >= 10000 && cargoMass <= 10000){
         list.style.visibility = "visible";
         launchStatus.innerHTML = "Shuttle is ready for launch";
         launchStatus.style.color = 'green';
