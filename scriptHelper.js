@@ -28,7 +28,7 @@ function validateInput(testInput) {
 };
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-alert("katie")
+
     if (pilot === "" || copilot === "" || fuelLevel === "" || cargoLevel === "") {
         alert("All fields are required!");
     } else if (isNaN(pilot) || isNaN(copilot)) {
