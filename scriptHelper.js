@@ -27,43 +27,44 @@ function validateInput(testInput) {
     }
 };
 
-function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
 
-    if (pilot === "" || copilot === "" || fuelLevel === "" || cargoLevel === "") {
+    if (pilot === "" || copilot === "" || fuelLevel === "" || cargoMass === "") {
         alert("All fields are required!");
     } else if (isNaN(pilot) || isNaN(copilot)) {
-        pilot.innerHTML = `Pilot ${pilot} is ready`;
-        copilot.innerHTML = `Co-pilot ${copilot} is ready`;
+        
+        //pilot.innerHTML = `Pilot ${pilot} is ready`;
+        //copilot.innerHTML = `Co-pilot ${copilot} is ready`;
     } else {
-        alert("Make sure to enter valid information for each field!");
+        alert("Enter valid information for each field!");
     } 
 
     if (fuelLevel < 10000){ 
         list.style.visibility = "visible";
-        fuelStatus.innerHTML = "Fuel level is too low for the journey";
+        fuelLevel.innerHTML = "Fuel level is too low for the journey";
         launchStatus.innerHTML = "Shuttle is not ready for launch";
         launchStatus.style.color = 'red';
     } else {
         list.style.visibility = "visible";
-        fuelStatus.innerHTML = "Fuel level is high enough for launch";
+        fuelLevel.innerHTML = "Fuel level is high enough for launch";
     }
     
-    if(cargoLevel > 10000){
+    if(cargoMass > 10000){
         list.style.visibility = "visible";
-        fuelStatus.innerHTML = "Cargo mass is too heavy for the shuttle to take off";
         launchStatus.innterHTML = "Shuttle is not ready for launch";
         launchStatus.style.color = 'red';
+        cargoMass.innerHTML = "Cargo mass is too high for launch";
     } else {
         list.style.visibility = "visible";
-        cargoStatus.innerHTML = "Cargo mass is low enough for launch";
+        cargoMass.innerHTML = "Cargo mass is low enough for launch";
     }
 
     if(fuelLevel >= 10000 && cargoMass <= 10000){
         list.style.visibility = "visible";
         launchStatus.innerHTML = "Shuttle is ready for launch";
         launchStatus.style.color = 'green';
-        fuelStatus.innerHTML = "Fuel level is high enough for launch";
-        cargoStatus.innerHTML = "Cargo mass is low enough for launch";
+        fuelLevel.innerHTML = "Fuel level is high enough for launch";
+        cargoMass.innerHTML = "Cargo mass is low enough for launch";
     }
 };
 
